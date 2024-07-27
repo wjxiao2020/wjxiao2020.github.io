@@ -1109,7 +1109,7 @@ Skills Section Style
   top: 15px;
 }
 
-.skills-section .subrow{
+.skills-section .subrow {
   display: flex;
   position: relative;
   padding-bottom: 10px;
@@ -2214,6 +2214,11 @@ body {
   .skills-section .second-item .number {
     display: none;
   }
+
+  .skills-section .subrow {
+    flex-direction: column;
+  }
+
   .skills-section .item {
     text-align: center;
     margin-top: 45px;
