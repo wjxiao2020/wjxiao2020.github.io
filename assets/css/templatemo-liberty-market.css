@@ -1102,11 +1102,13 @@ Skills Section Style
 
 .skills-section .bottom-border:after {
   position: absolute;
-  width: 95%;
+  width: 90%;
   height: 1px;
   background-color: rgba(255, 255, 255, 0.2);
   content: '';
-  top: 15px;
+  /* top: 15px; */
+  bottom: -25px;
+  
 }
 
 .skills-section .subrow {
@@ -2223,6 +2225,11 @@ body {
 
   .skills-section .subrow {
     flex-direction: column;
+  }
+
+  .skills-section .bottom-border:after {
+    /* left : 30px; */
+    right:5%;
   }
 
   .skills-section .item {
