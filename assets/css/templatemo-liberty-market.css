@@ -2179,6 +2179,10 @@ body {
   .current-page-name {
     display: none;
   }
+
+  .section-heading h2 {
+    font-size: 27px;
+  }
 }
 
 @media (max-width: 767px) {
