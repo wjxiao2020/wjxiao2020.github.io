@@ -2173,6 +2173,12 @@ body {
   overflow-x: hidden;
 }
 
+@media (max-width: 600px) {
+  .current-page-name {
+    display: none;
+  }
+}
+
 @media (max-width: 767px) {
   .top-seller .item {
     justify-content: center;
