@@ -14,7 +14,6 @@
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-liberty-market.css">
@@ -36,12 +35,43 @@ https://templatemo.com/tm-577-liberty-market
         window.history.replaceState('', document.title, window.location.pathname + window.location.search);
       }
       // else {
-      // // Delay the scroll to ensure the page is fully rendered
+      // // scroll to top of the page, delay the scroll to ensure the page is fully rendered so the scoll will succeed
       // setTimeout(function() {
       //     window.scrollTo(0, 0);
       //   }, 100);
       // }
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+            const milestoneDiv = document.getElementById("milestone-section");
+            const containerDiv = milestoneDiv.getElementsByClassName('row')[0];
+            const items = milestoneDiv.querySelectorAll(".item");
+            const classes = ["first-item", "second-item"];
+            const maxIdxWithBottomBorder = Math.floor((items.length - 1) / 3) * 3;
+
+            items.forEach((item, index) => {
+                const groupIndex = Math.floor(index / 3);
+                const classIndex = index % 3;
+                
+                // Add class only for the first two item divs
+                if (classIndex < 2) { 
+                    item.classList.add(classes[classIndex]);
+                }
+
+                if (index < maxIdxWithBottomBorder) {
+                  item.firstElementChild.classList.add("bottom-border")
+                }
+ 
+                // Every 3 items, wrap them in a subrow div
+                if (classIndex === 0) {
+                    const subrowDiv = document.createElement("div");
+                    subrowDiv.classList.add("col-lg-12", "subrow");
+                    containerDiv.appendChild(subrowDiv);
+                }
+                // put the item divs into the subrow div
+                containerDiv.lastElementChild.appendChild(item);
+            });
+        });
   </script>
 
 <body>
@@ -293,11 +323,29 @@ https://templatemo.com/tm-577-liberty-market
                     <img src="assets/images/Weijia_Xiao_Shhhhh.jpeg" alt="Weijia Xiao Shhhhh Game">
                     <div class="down-content">
                       <h4>Shhhhh</h4>
-                      <span><strong>3D First-Person Horror Game</strong><br>Clap your way, hide your sound... Don't let the monster find you...</span>
-                      <!-- <span class="collection">Items In Collection:<br><strong>426/468</strong></span>
-                      <span class="category">Category:<br><strong>Blockchain</strong></span> -->
+                      <span><strong>3D First-Person Survival Horror Game</strong><br>Clap your way, hide your sound... Don't let the monster get you found...</span>
                       <div class="main-button">
                         <a href="https://yutong20000.itch.io/shhhhh" target="_blank">Play it!</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="assets/images/Weijia_Xiao_Cutiedom_Cover.png" alt="Weijia Xiao Cutiedom Game">
+                    <div class="down-content">
+                      <h4>Cutiedom</h4>
+                      <span><strong>3D Role-Playing Game</strong><br>Go for the gems, watch the time and avoid the devils!</span>
+                      <div class="main-button">
+                        <a href="https://play.unity.com/en/games/e60de8f2-e728-4b93-a2e9-b140ea003496/cutiedom" target="_blank">Play it!</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="assets/images/Weijia_Xiao_Dungeon_Cover.png" alt="Weijia Xiao Dungeon Game">
+                    <div class="down-content">
+                      <h4>Dungeon</h4>
+                      <span><strong>3D First-Person Survival Game</strong><br>Defeat the skulls!<br>... Watch your back!</span>
+                      <div class="main-button">
+                        <a href="https://play.unity.com/en/games/40baa2ee-4508-4a09-a31b-9dab9426135c/dungeon" target="_blank">Play it!</a>
                       </div>
                     </div>
                   </div>
@@ -312,7 +360,115 @@ https://templatemo.com/tm-577-liberty-market
   <!-- Game Collection Area Start -->
 
   <!-- Milestones Section Start -->
-  <div class="skills-section">
+  <div class="skills-section" id="milestone-section">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <div class="line-dec"></div>
+            <h2>Milestones</h2>
+          </div>
+        </div>
+
+        <div class="col-lg-4 item">
+          <div>
+            <div class="icon">
+              🏆
+            </div>
+            <h4>First Hackathon During College</h4>
+            <h6>Aug 2024</h6>
+            <p>Developed a social media platform using a completely new programming language within 43 hours and made it to the Top 3 Finalists!</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 item">
+          <div>
+            <div class="icon">
+              👩🏻‍💻
+            </div>
+            <h4>First Full Stack Project</h4>
+            <h6>Aug 2024</h6>
+            <p>Built an inventory management system with real-time CRUD operations, search functionality, and photo previews; adapted quickly to using <b>all-new full stack tech stac</b>k, enabling efficient project delivery <b>within a week</b>!</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 item">
+          <div>
+            <div class="icon">
+              💪
+            </div>
+            <h4>First Fellowship</h4>
+            <h6>Jul 2024</h6>
+            <p>Found great teammates. Will complete 5 AI projects in 5 weeks and deliver our final product to <b>1000</b> customers!</p>
+          </div>
+        </div>
+        <div class="col-lg-4 item">
+          <div>
+            <div class="icon">
+              📄
+            </div>
+            <h4>First Co-First</h4>
+            <h6>Jun 2024</h6>
+            <p>Submitted an Machine Learning research academic paper to a peer-reviewed journal as a co-first author! Contributed greatly by <b>proposing a novel Deep Learning model</b>. </p>
+          </div>
+        </div>
+        <div class="col-lg-4 item">
+          <div>
+            <div class="icon">
+              🏆
+            </div>
+            <h4>First Game Jam</h4>
+            <h6>May 2024</h6>
+            <p>Ranked <b>#11</b> in mechanics design among 700+ entries from ~10k professional & student attendees!</p>
+          </div>
+        </div>
+
+
+        <div class="col-lg-4 item">
+          <div> 
+            <div class="icon">
+              🎮
+            </div>
+            <h4>First Unity Game -> Game Team</h4>
+            <h6>Nov 2023</h6>
+            <p>Followed a YouTube tutorial to create my first-ever Unity game. Got invited into a game development team 3 days later.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 item">
+          <div> 
+            <div class="icon">
+              👩🏻‍💻
+            </div>
+            <h4>First Website Built</h4>
+            <h6>Aug 2023</h6>
+            <p>Actually... I built <b>3</b> within <b>15</b> days! To better showcase the game programs I coded in Java, I transferred them into browser games. Started from a blank HTML file, and learned all the skills needed along the way!</p>
+          </div>
+        </div>
+        <div class="col-lg-4 item">
+          <div> 
+            <div class="icon">
+              📄
+            </div>
+            <h4>First Academic Publication</h4>
+            <h6>Sept 2020</h6>
+            <p>Published an Machine Learning research academic paper in a <b>JCR Q1-ranked</b> (top 25%) peer-reviewed journal!</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 item">
+            <div class="icon">
+              🏆
+            </div>
+            <h4>First CS Competitions</h4>
+            <h6>Jul-Aug 2020</h6>
+            <p>Won <b>4</b> awards in Competitions & Hackathons in a row within 2 months!</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- <div class="skills-section milestone-section">
     <div class="container">
       <div class="row">
 
@@ -384,27 +540,25 @@ https://templatemo.com/tm-577-liberty-market
               </div>
               <h4>First Academic publication</h4>
               <h6>Sept 2020</h6>
-              <p>Published an academic paper in a <b>Q1-ranked</b> (top 25%) peer-reviewed journal!</p>
+              <p>Published an academic paper in a <b>JCR Q1-ranked</b> (top 25%) peer-reviewed journal!</p>
             </div>
           </div>
         </div>
 
         <div class="col-lg-12 subrow">
           <div class="col-lg-4 item first-item">
-            <!-- <div class="bottom-border">  -->
               <div class="icon">
                 🏆
               </div>
               <h4>First CS Competitions</h4>
               <h6>Jul-Aug 2020</h6>
               <p>Won <b>4</b> awards in Competitions & Hackathons in a row within 2 months!</p>
-            <!-- </div> -->
           </div>
         </div>
 
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="currently-market" id="contact-section">
     <div class="container">
@@ -420,16 +574,16 @@ https://templatemo.com/tm-577-liberty-market
             <b>Email : <a href="mailto: xiao.wei@northeastern.edu">xiao.wei@northeastern.edu</a></b>
           </p>
           <a href="https://www.linkedin.com/in/weijiaxiao/" target="_blank">
-            <img src="assets/images/Weijia_Xiao_LinkedIn_Logo.png" alt="Weijia Xiao LinkedIn Logo" title="LinkedIn">
+            <img src="assets/images/Weijia_Xiao_LinkedIn_logo_small.png" alt="Weijia Xiao LinkedIn Logo" title="LinkedIn">
           </a>
           <a href="https://scholar.google.com/citations?hl=en&user=yK6_6K8AAAAJ" target="_blank">
-            <img src="assets/images/Weijia_Xiao_Google_Scholar_Logo.jpg" alt="Weijia Xiao Google Scholar Logo" title="Google Scholar">
+            <img src="assets/images/Weijia_Xiao_Google_Scholar_logo_small.png" alt="Weijia Xiao Google Scholar Logo" title="Google Scholar">
           </a>
           <a href="https://www.researchgate.net/profile/Weijia-Xiao" target="_blank">
-            <img src="assets/images/Weijia_Xiao_ResearchGate_Logo.svg" alt="Weijia Xiao ResearchGate Logo" title="ResearchGate">
+            <img src="assets/images/Weijia_Xiao_ResearchGate_logo_small.png" alt="Weijia Xiao ResearchGate Logo" title="ResearchGate">
           </a>
           <a href="https://github.com/wjxiao2020" target="_blank">
-            <img src="assets/images/Weijia_Xiao_GitHub_Full_Logo.jpg" alt="Weijia Xiao GitHub Logo" title="GitHub">
+            <img src="assets/images/Weijia_Xiao_GitHub_logo_small.png" alt="Weijia Xiao GitHub Logo" title="GitHub">
           </a>
         </div>
         <!-- <div class="col-lg-6">
