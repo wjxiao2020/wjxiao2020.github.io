@@ -184,6 +184,7 @@ body {
   transition: all .3s;
   position: relative;
   overflow: hidden;
+  margin-right: 15px;
 }
 
 .main-button a:after {
