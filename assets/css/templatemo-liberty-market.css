@@ -742,6 +742,57 @@ Header Style
   }
 }
 
+/* Compact mobile header: a slim full-width bar, with the dropdown menu
+   hanging directly below it at exactly the bar's width. */
+@media (max-width: 992px) {
+  .header-area.header-sticky,
+  .header-area.background-header {
+    height: 64px !important;
+    min-height: 0;
+    padding: 0;
+    background-color: #fff !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12) !important;
+  }
+  .header-area .container {
+    max-width: none;
+  }
+  .header-area .main-nav,
+  .background-header .main-nav {
+    padding: 0;
+    overflow: visible;
+  }
+  .header-area .main-nav .menu-trigger,
+  .background-header .main-nav .menu-trigger {
+    top: 12px;
+    right: 20px;
+  }
+  /* Positioned against .header-area, so it spans the bar's full width. */
+  .header-area.header-sticky .main-nav .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 !important;
+    padding: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  }
+  .header-area .main-nav .nav li {
+    border-bottom: 1px solid #eee;
+  }
+  .header-area .main-nav .nav li:last-child {
+    border-bottom: none;
+  }
+  .header-area .main-nav .nav li a {
+    height: 48px !important;
+    line-height: 48px !important;
+    font-size: 15px;
+  }
+  .header-area .main-nav .nav li a.active {
+    color: #7453fc !important;
+    font-weight: 700;
+  }
+}
+
 /* 
 ---------------------------------------------
 Banner Style
@@ -753,7 +804,7 @@ Banner Style
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  padding-top: 290px;
+  padding-top: 200px;
   padding-bottom: 240px;
   background-color: #2a2a2a;
 }
@@ -854,16 +905,6 @@ Categories & Collections Style
   background-size: cover;
   padding: 120px 0px 150px 0px;
   position: relative;
-}
-
-.categories-collections:after {
-  background-image: url(/assets/images/category-collection-dec.png);
-  width: 300px;
-  height: 282px;
-  position: absolute;
-  bottom: 0;
-  right: 30px;
-  content: '';
 }
 
 .categories .item {
@@ -1363,8 +1404,14 @@ Page Heading Style
   background-color: #2a2a2a;
 }
 
+/* Start below the floated prev/next links so they don't narrow the
+   (flex) row and push the title off-center. */
+.page-heading .container {
+  clear: both;
+}
+
 .page-heading .header-text {
-  padding-top: 100px;
+  padding-top: 60px;
 }
 
 .page-heading h6 {
@@ -1735,17 +1782,6 @@ Details Page Style
   background-size: cover;
   padding: 80px 0px 120px 0px;
   position: relative;
-}
-
-.experience-section:after {
-  background-image: url(/assets/images/category-collection-dec.png);
-  width: 300px;
-  height: 282px;
-  position: absolute;
-  bottom: 0;
-  right: 30px;
-  content: '';
-  z-index: 1;
 }
 
 .experience-section .left-image {
