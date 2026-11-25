@@ -10,8 +10,6 @@ const PAGE_ORDER = [
   { file: "AIML_researcher_page.html",   name: "Machine Learning Researcher" },
   { file: "data_scientist_page.html",    name: "Machine Learning Engineer" },
   { file: "game_developer_page.html",    name: "Game Developer" },
-  { file: "AI_engineer_page.html",       name: "AI Engineer" },
-  { file: "web_developer_page.html",     name: "Web Developer" },
 ];
 
 (function () {

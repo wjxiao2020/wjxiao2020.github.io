@@ -1801,6 +1801,10 @@ Details Page Style
   display:inline-block;
 }
 
+.experience-section .publication h6 {
+  line-height: 30px;
+}
+
 .experience-section .publication b {
   color: #bbaef2;
 }
@@ -1814,9 +1818,11 @@ Details Page Style
   margin-bottom: 50px;
 }
 
+/* Link logos after each title; lowered so they center on the title text */
 .experience-section img {
-  height: 25px;
+  height: 20px;
   width: auto;
+  vertical-align: -3px;
 }
 
 .experience-section span.author {
@@ -1855,6 +1861,24 @@ Details Page Style
   margin-bottom: 50px;
   position: relative;
   z-index: 2;
+}
+
+/* Small link icon placed inline at the end of a line of text */
+.experience-section .inline-icon {
+  height: 16px;
+  vertical-align: -2px;
+  margin-left: 6px;
+}
+
+/* Gap between a section header and its content */
+.experience-section .section-heading {
+  margin-bottom: 50px;
+}
+
+/* A second section on the same page (e.g. Experience -> Projects):
+   adds space above its header so sections read as separate blocks */
+.experience-section .section-break {
+  margin-top: 60px;
 }
 
 .experience-section span.bid,
