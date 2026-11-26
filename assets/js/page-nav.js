@@ -6,10 +6,10 @@
  * (Remember to also reorder the cards in index.html to match.)
  */
 const PAGE_ORDER = [
-  { file: "software_engineer_page.html", name: "Software Engineer" },
-  { file: "AIML_researcher_page.html",   name: "Machine Learning Researcher" },
-  { file: "data_scientist_page.html",    name: "Machine Learning Engineer" },
-  { file: "game_developer_page.html",    name: "Game Developer" },
+  { file: "software-engineer.html", name: "Software Engineer" },
+  { file: "ml-researcher.html",     name: "Machine Learning Researcher" },
+  { file: "ml-engineer.html",       name: "Machine Learning Engineer" },
+  { file: "game-developer.html",    name: "Game Developer" },
 ];
 
 (function () {
