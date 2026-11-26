@@ -36,13 +36,12 @@ const PAGE_ORDER = [
 
   document.querySelectorAll(".page-heading .go-next").forEach((el) => {
     el.replaceChildren();
+    if (!next) return; // last page: leave empty
     const currentName = document.createElement("span");
     currentName.className = "current-page-name";
     currentName.textContent = PAGE_ORDER[idx].name;
     el.appendChild(currentName);
-    if (next) {
-      el.appendChild(document.createTextNode(" "));
-      el.appendChild(makeLink(next, "> " + next.name));
-    }
+    el.appendChild(document.createTextNode(" "));
+    el.appendChild(makeLink(next, "> " + next.name));
   });
 })();
