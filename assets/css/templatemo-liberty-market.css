@@ -1809,9 +1809,26 @@ Details Page Style
   color: #bbaef2;
 }
 
+/* Only the title (h4) is bold; company / date / skills lines share a
+   medium weight so they read as one group of details under it */
+.experience-section h6 {
+  font-weight: 500;
+}
+
 .experience-section .dates {
   margin-bottom: 10px;
   line-height:30px;
+}
+
+/* Tech stack line under the date: tinted and slightly smaller so it
+   reads as metadata, same weight as the lines above */
+.experience-section .dates .skills {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.3px;
+  color: #bbaef2;
 }
 
 .experience-section .education {
